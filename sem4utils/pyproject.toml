@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sem4utils"
+version = "0.1.0"
+description = "Python utility functions from Semester 4 classwork — strings, lists, math & more."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+  { name = "Baidik" }
+]
+requires-python = ">=3.8"
+keywords = ["python", "utilities", "education", "strings", "mathematics"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Intended Audience :: Education",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/yourusername/sem4utils"
+"Bug Tracker" = "https://github.com/yourusername/sem4utils/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sem4utils*"]

@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+sem4utils/__init__.py
+sem4utils/functions.py
+sem4utils/lists.py
+sem4utils/strings.py
+sem4utils.egg-info/PKG-INFO
+sem4utils.egg-info/SOURCES.txt
+sem4utils.egg-info/dependency_links.txt
+sem4utils.egg-info/top_level.txt

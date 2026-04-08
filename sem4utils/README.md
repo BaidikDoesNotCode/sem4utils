@@ -1,0 +1,58 @@
+# sem4utils
+
+A Python utility package extracted from Semester 4 classwork, covering string operations, list manipulation, and mathematical functions.
+
+## Installation
+
+### From GitHub (recommended for open source use)
+```bash
+pip install git+https://github.com/yourusername/sem4utils.git
+```
+
+### From a local clone
+```bash
+git clone https://github.com/yourusername/sem4utils.git
+cd sem4utils
+pip install .
+```
+
+## Usage
+
+```python
+# Math functions
+from sem4utils import gcd, fibonacci, is_prime, factorial, classify_triangle
+
+print(gcd(48, 18))           # 6
+print(fibonacci(7))          # [0, 1, 1, 2, 3, 5, 8]
+print(is_prime(17))          # True
+print(factorial(5))          # 120
+print(classify_triangle(3, 4, 5))  # Scalene Triangle
+
+# String utilities
+from sem4utils import format_certificate, remove_vowels, to_title_case
+
+print(format_certificate("S", 1, "Statistics"))
+# This is to certify that Ms S belongs to Semester 1 of the Statistics department.
+
+print(remove_vowels("education"))  # dctn
+print(to_title_case("introduction to python"))  # Introduction To Python
+
+# List utilities
+from sem4utils import sort_list, list_from_string, join_list_to_string
+
+print(sort_list([9, 3, 5, 1]))          # [1, 3, 5, 9]
+print(list_from_string("python"))       # ['p', 'y', 't', 'h', 'o', 'n']
+print(join_list_to_string(['p','y','t','h','o','n']))  # python
+```
+
+## Modules
+
+| Module | Contents |
+|---|---|
+| `sem4utils.functions` | `gcd`, `fibonacci`, `is_prime`, `factorial`, `mean`, `classify_number`, `is_leap_year`, `classify_triangle`, `remove_vowels`, `mystery_adder`, `multiplication_table`, `count_occurrences` |
+| `sem4utils.strings` | `check_starts_with`, `check_ends_with`, `is_all_upper`, `is_all_lower`, `to_title_case`, `concatenate_words`, `count_char`, `find_char`, `replace_substring`, `format_certificate` |
+| `sem4utils.lists` | `get_element`, `slice_list`, `update_element`, `concatenate_lists`, `add_element`, `insert_element`, `extend_list`, `remove_by_index`, `remove_by_value`, `sort_list`, `list_from_string`, `join_list_to_string`, `nested_get` |
+
+## License
+
+MIT License — free to use, modify, and distribute.
