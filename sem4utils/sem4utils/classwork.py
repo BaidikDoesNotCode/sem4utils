@@ -387,6 +387,25 @@ d = {"brand": "Ford", "model": "Mustang", "year": 1964}
 if "brand" in d:
     print("Yes, the key is in the dictionary")
 
+# --- Truthiness Examples ---
+x = 5; y = 0
+if x: print("X is True")      # Non-zero numbers are truthy
+if y: print("Y is True")
+else: print("Y is False")     # Zero is falsy
+
+# A list containing zero is still truthy because it is not empty
+x = [0]
+if x: print("List is True")
+
+# A string containing "False" is truthy because it is non-empty
+x = "False"
+if x: print("X is True")
+
+# --- Chained Comparison ---
+a = 3; b = 2; c = 1
+if a > b > c:                 # Evaluates if a > b AND b > c
+    print("Chained comparison works!")
+
 # Roots of quadratic — discriminant check
 a = int(input("Enter coefficient of second order polynomial = "))
 b = int(input("Enter coefficient of first order polynomial = "))
@@ -439,6 +458,35 @@ if a + b > c and a + c > b and b + c > a:
         print("Scalene Triangle")
 else:
     print("Invalid Triangle")
+
+# --- Factor Logic Trace (Nested Conditionals) ---
+a = 7; b = 14
+if a < b:                     # 7 < 14 is True
+    if b % a == 0:            # 14 % 7 == 0 is True
+        if a % 2 == 0:        # 7 % 2 == 0 is False
+            print("Even Factor")
+        else:
+            print("Odd Factor") # Output: Odd Factor
+    else:
+        print("Not a Factor")
+else:
+    print("Invalid")
+
+# --- Password Strength Checker ---
+pwd = input('Enter password: ')
+n = len(pwd)
+
+if n < 6:
+    print("Weak Password")
+elif 6 < n <= 10:
+    if pwd.isalpha():
+        print("Moderate Password")
+    elif any(c.isdigit() for c in pwd) and any(c.isalpha() for c in pwd):
+        print("Strong Password")
+    else:
+        print("Invalid Password")
+else:
+    print("Password is too long.")
 
 
 # =============================================================================
@@ -647,6 +695,16 @@ def mean(x):
     return m
 mean([1, 2, 3])
 
+# String repetition function
+def new(x):
+    s = ""
+    for i in x:
+        s = s + i             # Concatenates list elements into a string
+    m = s * len(x)            # Repeats the string by the length of the list
+    return m
+print(new(['1', '2', '3']))   # Output: '123123123'
+print(new(['4', '5']))        # Output: '4545'
+
 # Function that modifies and returns
 def test():
     x = 10
@@ -682,6 +740,14 @@ def fibon(n):
         b = c
 fibon(7)
 
+# Recursive countdown
+def countdown(n):
+    if n == 0:
+        return                # Base case
+    print(n)
+    countdown(n - 1)          # Recursive call
+countdown(3)                  # Output: 3, 2, 1
+
 # Count occurrences of x in list
 def count_occurences(lst, x):
     count = 0
@@ -702,7 +768,7 @@ multiplication_table(5, 11)
 # PART 11: MODULES
 # =============================================================================
 
-# a. Modules: math, random
+# a. Modules: math, random, statistics
 # b. Examples:
 
 import math
@@ -733,6 +799,16 @@ for _ in range(10):
     value = random.normalvariate(0, 1)
     x.append(value)
     print(value)
+
+# statistics module
+import statistics as st
+
+GammaList = []
+for i in range(10):
+    GammaList.append(random.gammavariate(2, 0.2))
+
+print(st.median(GammaList))
+# Other functions mentioned: st.mean(), st.stdev(), st.variance()
 
 
 # =============================================================================
